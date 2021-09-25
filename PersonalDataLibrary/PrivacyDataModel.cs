@@ -2,6 +2,9 @@
 
 namespace PersonalDataLibary
 { 
+    /// <summary>
+    /// Represents a user's personal request for privacy.
+    /// </summary>
     public class PrivacyDataModel
     {
         public bool privacyNotice { get; set; }
