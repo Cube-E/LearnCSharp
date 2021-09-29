@@ -10,6 +10,8 @@ namespace PharmaTests
         public void test_givenValidLastName_lastNameSet()
         {
             //given
+            MongoCRUD mongo = new MongoCRUD("mflix");
+            
 
             //when
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace PersonalDataLibary
 {
@@ -7,6 +8,9 @@ namespace PersonalDataLibary
     /// </summary>
     public class LocationDataModel
     {
+        [BsonId]
+        public Guid Id { get; set; }
+
         /// <summary>
         /// The primary address of a user.
         /// </summary>
