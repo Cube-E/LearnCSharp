@@ -10,7 +10,7 @@ namespace PharmaTests
         public void test_givenValidLastName_lastNameSet()
         {
             //given
-            MongoCRUD mongo = new MongoCRUD("mflix");
+            MongoConnector mongo = new MongoConnector("mflix");
             LocationDataModel locData = new LocationDataModel();
             locData.primaryAddress = "4000 Hulen Pl";
             locData.city = "Fort Worth";

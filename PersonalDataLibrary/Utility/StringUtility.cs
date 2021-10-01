@@ -4,19 +4,6 @@ namespace PersonalDataLibrary.Utility
     static class StringUtility
     {
         /// <summary>
-        /// Checks name for valid input.
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        public static bool validateName(string name)
-        {
-            var value = false;
-            value = isNullOrEmpty(name);
-            value = ContainsValidCharacters(name);
-            return value;
-        }
-
-        /// <summary>
         /// Check if string is null or empty.
         /// </summary>
         /// <param name="str"></param>
@@ -28,6 +15,7 @@ namespace PersonalDataLibrary.Utility
 
         /// <summary>
         /// Check if string contains valid ascii characters.
+        /// TODO: update to take into account unicode/different languages.
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
