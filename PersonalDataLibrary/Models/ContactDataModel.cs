@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PersonalDataLibary
+namespace PersonalDataLibrary.Models
 {
     /// <summary>
     /// Represents the contact data of a user.

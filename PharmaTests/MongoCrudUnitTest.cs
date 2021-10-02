@@ -7,10 +7,9 @@ namespace PharmaTests
     public class MongoCrudUnitTest
     {
         [TestMethod]
-        public void test_insert_exists()
-        {
+        public void test_insert_exists() {
             //given
-            MongoConnector mongo = new MongoConnector("mflix");
+           /* MongoConnector mongo = new MongoConnector("mflix");
             LocationDataModel locData = new LocationDataModel();
             locData.primaryAddress = "4000 Hulen Pl";
             locData.city = "Fort Worth";
@@ -19,7 +18,7 @@ namespace PharmaTests
             locData.country = "United States";
 
             //when
-            mongo.InsertRecord<LocationDataModel>("LocationData", locData);
+            mongo.InsertRecord<LocationDataModel>("LocationData", locData);*/
 
             //then
         }

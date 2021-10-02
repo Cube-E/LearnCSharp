@@ -1,7 +1,7 @@
 ﻿using System;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace PersonalDataLibary
+namespace PersonalDataLibrary.Models
 {
     /// <summary>
     /// Represents the location data of a user.

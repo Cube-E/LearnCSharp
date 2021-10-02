@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PersonalDataLibary
+namespace PersonalDataLibrary.Models
 { 
     /// <summary>
     /// Represents a user's personal request/approval for private information to be utilized for data analytics and app improvements.

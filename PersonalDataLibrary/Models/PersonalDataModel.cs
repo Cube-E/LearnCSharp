@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PersonalDataLibary
+namespace PersonalDataLibrary.Models
 {
 
     /// <summary>

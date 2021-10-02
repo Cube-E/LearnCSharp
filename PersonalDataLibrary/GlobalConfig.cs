@@ -18,16 +18,13 @@ namespace PersonalDataLibrary
         /// </summary>
         /// <param name="isMongo"></param>
         /// <param name="isTextFiles"></param>
-        public static void InitializeConnections(bool isMongo, bool isTextFiles)
-        {
-            if (isMongo)
-            {
+        public static void InitializeConnections(bool isMongo, bool isTextFiles) {
+            if (isMongo) {
                 MongoConnector mongo = new MongoConnector();
                 connections.Add(mongo);
             }
 
-            if (isTextFiles)
-            {
+            if (isTextFiles) {
                 // TODO - Create text connection
             }
             

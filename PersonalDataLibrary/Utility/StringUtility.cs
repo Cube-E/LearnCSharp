@@ -1,15 +1,15 @@
-﻿
+﻿using System;
+
 namespace PersonalDataLibrary.Utility
 {
-    static class StringUtility
+    public static class StringUtility
     {
         /// <summary>
         /// Check if string is null or empty.
         /// </summary>
         /// <param name="str"></param>
-        /// <returns></returns>
-        public static bool isNullOrEmpty(string str)
-        {
+        /// <returns>Return true if the string is either empty or false.</returns>
+        public static bool isNullOrEmpty(string str) {
             return string.IsNullOrEmpty(str);
         }
 
@@ -18,17 +18,14 @@ namespace PersonalDataLibrary.Utility
         /// TODO: update to take into account unicode/different languages.
         /// </summary>
         /// <param name="str"></param>
-        /// <returns></returns>
-        public static bool ContainsValidCharacters(string str)
-        {
-            foreach (char c in str)
-            {   
-                if(!char.IsLetter(c))
-                {
-                    return false;
+        /// <returns>Returns true if the string contains invalid characters.</returns>
+        public static bool containsInvalidCharacters(string str) {
+            foreach (char c in str) {
+                if (c != '-' && char.IsLetter(c) == false) {
+                    return true;
                 }
-            }
-            return true;
+             }
+            return false;
         }
     }
 }
