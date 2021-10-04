@@ -32,8 +32,10 @@ namespace PharmaTests
 
         [TestMethod]
         public void test_invalidCharacters() {
-            string str = "#";
-            Assert.IsTrue(StringUtility.containsInvalidCharacters(str));
+            string str = "`~!@#$%^&*()_=+[]\\{}|;':\",./<>?\n\t\r";
+            foreach( char c in str) {
+                Assert.IsTrue(StringUtility.containsInvalidCharacters(c.ToString()));
+            }
         }
     }
 }
