@@ -1,4 +1,6 @@
 ﻿using System;
+using PersonalDataLibary;
+using PersonalDataLibrary.Validators;
 
 namespace PersonalDataLibrary.Models
 {
@@ -6,8 +8,18 @@ namespace PersonalDataLibrary.Models
     /// <summary>
     /// Represents all the personal data of a user.
     /// </summary>
-    public class PersonalDataModel
-    {
+    public class PersonalDataModel {
+
+        //TODO: Dependency Inject. Can you inject a static variable?
+        /// 
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <returns></returns>
+        public PersonalDataModel (string firstName, string lastName) {
+            _firstName = firstName;
+            _lastName = lastName;
+        }
         /// <summary>
         /// The last name of the user.
         /// </summary>
@@ -52,8 +64,6 @@ namespace PersonalDataLibrary.Models
         /// The privacy data of the user.
         /// </summary>
         private PrivacyDataModel _privacyData { get; set; }
-
-       
 
     }
 

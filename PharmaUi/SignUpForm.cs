@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Microsoft.Extensions.Logging;
+using PersonalDataLibrary.Models;
 using PersonalDataLibrary.Validators;
 
 namespace PharmaUi
@@ -18,10 +20,14 @@ namespace PharmaUi
             int nHeightEllipse // height of ellipse
         );
 
-        public SignUpForm() {
+        private PersonalDataValidator _validator;
+        private readonly ILogger<SignUpForm> _logger;
+        public SignUpForm (PersonalDataValidator validator, ILogger<SignUpForm> logger) {
             InitializeComponent();
-           //this.FormBorderStyle = FormBorderStyle.None;
-           Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
+            //this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 5, 5));
+            _validator = validator;
+            _logger = logger;
         }
 
         protected override void OnResize(EventArgs e) {
@@ -42,13 +48,18 @@ namespace PharmaUi
         }
 
         private void submitButton_Click(object sender, EventArgs e) {
-            PersonalDataValidator personalDataValidator = new PersonalDataValidator();
-            if(!personalDataValidator.validateInfo(firstNameValue.Text, lastNameValue.Text))
+            PersonalDataModel model = _validator.getInstance (firstNameValue.Text, lastNameValue.Text);
+            if (model == null) 
             {
+                //log message
                 MessageBox.Show("Invalid information was entered\nPlease retry");
+                _logger?.LogInformation ("User submitted invalid information.");
                 return;
-            } 
+            }
+            //log message
+            //add model to database
             MessageBox.Show("Buttom Clicked!");
+            _logger.LogInformation ("User submitted valid information");
             return;
 
         }

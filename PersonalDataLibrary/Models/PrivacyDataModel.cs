@@ -7,6 +7,9 @@ namespace PersonalDataLibrary.Models
     /// </summary>
     public class PrivacyDataModel
     {
+        public PrivacyDataModel () {
+               
+        }
         /// <summary>
         /// User's approval for data to be shared.
         /// </summary>

@@ -8,6 +8,7 @@ namespace PersonalDataLibrary.Controller
 {
     public interface IDataConnection
     {
+       
         /// <summary>
         /// Initializes a connection to the connection type.
         /// </summary>

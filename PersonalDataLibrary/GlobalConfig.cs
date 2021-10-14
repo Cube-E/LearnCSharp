@@ -1,5 +1,7 @@
 ﻿using PersonalDataLibary;
+using PersonalDataLibrary.Connectors;
 using PersonalDataLibrary.Controller;
+using PersonalDataLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,6 @@ namespace PersonalDataLibrary
     public static class GlobalConfig
     {
         public static List<IDataConnection> connections { get; set; }
-
 
         /// <summary>
         /// Creates connections and adds them to the connections list.
@@ -25,9 +26,16 @@ namespace PersonalDataLibrary
             }
 
             if (isTextFiles) {
-                // TODO - Create text connection
+                TextConnector text = new TextConnector ();
+                connections.Add (text);
             }
-            
+        }
+
+        public static void InsertRecords () {
+            PrivacyDataModel privateData = new PrivacyDataModel ();
+            foreach(IDataConnection connection in connections) {
+                connection.InsertRecord<PrivacyDataModel> ("PrivateData", privateData);
+            }
         }
     }
 }
