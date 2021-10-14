@@ -1,6 +1,4 @@
 ﻿using System;
-using PersonalDataLibary;
-using PersonalDataLibrary.Validators;
 
 namespace PersonalDataLibrary.Models
 {
@@ -20,6 +18,7 @@ namespace PersonalDataLibrary.Models
             _firstName = firstName;
             _lastName = lastName;
         }
+
         /// <summary>
         /// The last name of the user.
         /// </summary>

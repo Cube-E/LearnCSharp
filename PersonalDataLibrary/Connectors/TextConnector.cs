@@ -1,9 +1,4 @@
 ﻿using PersonalDataLibrary.Controller;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PersonalDataLibrary.Connectors {
     class TextConnector: IDataConnection {

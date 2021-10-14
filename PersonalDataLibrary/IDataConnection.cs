@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PersonalDataLibrary.Controller
 {
     public interface IDataConnection
     {
-       
         /// <summary>
         /// Initializes a connection to the connection type.
         /// </summary>

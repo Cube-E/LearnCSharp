@@ -61,7 +61,6 @@ namespace PharmaUi
             MessageBox.Show("Buttom Clicked!");
             _logger.LogInformation ("User submitted valid information");
             return;
-
         }
     }
 }

@@ -8,6 +8,7 @@ namespace PersonalDataLibrary.Validators
     public class PersonalDataValidator
     {
         private readonly ILogger<PersonalDataValidator> _logger;
+
         public  PersonalDataModel getInstance (
             String firstName,
             String lastName ) {
@@ -20,9 +21,10 @@ namespace PersonalDataLibrary.Validators
             }
             return new PersonalDataModel (firstName, lastName);
         }
-        public PersonalDataValidator(ILogger<PersonalDataValidator> logger = null)
-        {
-            //personalData = new PersonalDataModel();
+
+        public PersonalDataValidator(
+            ILogger<PersonalDataValidator> logger) {
+
             _logger = logger;
         }
 
@@ -35,9 +37,9 @@ namespace PersonalDataLibrary.Validators
             if (!isValidLastName(lastName)) {
                 isValid = false;
             }
-
             return isValid;
         }
+
         private bool isValidFirstName(string firstName) {
             if (StringUtility.isNullOrEmpty(firstName)) {
                 return false;
